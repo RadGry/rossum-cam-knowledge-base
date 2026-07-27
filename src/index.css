@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+/*
+  CAM Knowledge Base — design tokens
+  Near-white surface, ink text, indigo accent, hairline borders.
+  Owner + segment colours exposed as Tailwind theme colours.
+*/
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  --color-surface: #fafafa;
+  --color-card: #ffffff;
+  --color-ink: #111827;
+  --color-muted: #6b7280;
+  --color-hairline: #e5e7eb;
+  --color-accent: #4338ca;
+
+  /* Ownership colours */
+  --color-owner-sales: #64748b;
+  --color-owner-ps: #b45309;
+  --color-owner-cam: #4338ca;
+
+  /* Cockpit segment colours */
+  --color-seg-grow: #16803c;
+  --color-seg-rescue: #b45309;
+  --color-seg-retain: #4338ca;
+  --color-seg-stabilize: #b91c1c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Uppercase, letter-spaced mini-label — the site's signature convention */
+.mini-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
