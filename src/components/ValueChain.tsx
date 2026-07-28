@@ -4,7 +4,7 @@ import { MiniLabel } from './ui'
 /* ------------------------------------------------------------------ *
  * The Value Chain — the site's spine.
  * Sales win → ★Contract → Professional Services onboard → ★GO-LIVE
- * (transfer to CAM) → CAM adopt → renew → expand.
+ * (transfer to CAM) → CAM adopt → expand → renew.
  * Colour-coded by owner. The GO-LIVE handoff is the emphasised hinge.
  * Horizontal ribbon on desktop, stacked top→bottom on mobile.
  *
@@ -14,7 +14,7 @@ import { MiniLabel } from './ui'
  * ------------------------------------------------------------------ */
 
 type Owner = 'sales' | 'ps' | 'cam'
-export type StageId = 'sales' | 'onboard' | 'adopt' | 'renew' | 'expand'
+export type StageId = 'sales' | 'onboard' | 'adopt' | 'expand' | 'renew'
 
 const OWNER: Record<
   Owner,
@@ -61,13 +61,13 @@ const STAGES: Stage[] = [
     title: 'Adopt & prove value',
     sub: 'Activate, baseline, realize value.',
   },
-  { id: 'renew', owner: 'cam', title: 'Renew', sub: 'Protect gross retention · 89%+.' },
   {
     id: 'expand',
     owner: 'cam',
     title: 'Expand',
     sub: 'Grow deliberately · past 100% NRR.',
   },
+  { id: 'renew', owner: 'cam', title: 'Renew', sub: 'Protect gross retention · 89%+.' },
 ]
 
 const stageById = (id: StageId) => STAGES.find((s) => s.id === id)!
@@ -237,13 +237,13 @@ export default function ValueChain({ highlight }: { highlight?: StageId }) {
             <Arrow dimmed={connDim} />
           </div>
           <div className="col-start-7 row-start-1">
-            <StageCard stage={stageById('renew')} dimmed={dim('renew')} highlighted={highlight === 'renew'} />
+            <StageCard stage={stageById('expand')} dimmed={dim('expand')} highlighted={highlight === 'expand'} />
           </div>
           <div className="col-start-8 row-start-1 flex items-center">
             <Arrow dimmed={connDim} />
           </div>
           <div className="col-start-9 row-start-1">
-            <StageCard stage={stageById('expand')} dimmed={dim('expand')} highlighted={highlight === 'expand'} />
+            <StageCard stage={stageById('renew')} dimmed={dim('renew')} highlighted={highlight === 'renew'} />
           </div>
 
           {/* Row 2 — "present from day one" dotted span: PS → adopt */}
@@ -276,9 +276,9 @@ export default function ValueChain({ highlight }: { highlight?: StageId }) {
           </div>
 
           <Arrow vertical dimmed={connDim} />
-          <StageCard stage={stageById('renew')} dimmed={dim('renew')} highlighted={highlight === 'renew'} />
-          <Arrow vertical dimmed={connDim} />
           <StageCard stage={stageById('expand')} dimmed={dim('expand')} highlighted={highlight === 'expand'} />
+          <Arrow vertical dimmed={connDim} />
+          <StageCard stage={stageById('renew')} dimmed={dim('renew')} highlighted={highlight === 'renew'} />
         </div>
       </div>
 

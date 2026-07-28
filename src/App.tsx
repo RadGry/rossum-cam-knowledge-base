@@ -2,13 +2,13 @@ import { NavLink, Outlet } from 'react-router-dom'
 
 const NAV = [
   { to: '/', label: 'Overview', end: true },
+  { to: '/onboarding', label: 'Onboarding', end: false },
   { to: '/customer-health', label: 'Customer Health', end: false },
   { to: '/prioritisation', label: 'Prioritisation', end: false },
-  { to: '/onboarding', label: 'Onboarding', end: false },
   { to: '/value-reviews', label: 'Value Reviews', end: false },
   { to: '/expansion', label: 'Expansion', end: false },
-  { to: '/escalation', label: 'Escalation', end: false },
   { to: '/renewal', label: 'Renewal', end: false },
+  { to: '/escalation', label: 'Escalation', end: false },
   { to: '/sources', label: 'Sources', end: false },
 ]
 
