@@ -22,12 +22,12 @@ export interface Source {
 export const sources: Source[] = [
   {
     id: 'hochstein-2023',
-    authors: 'Hochstein, Rangarajan, Nagel & Frankwick',
+    authors: 'Hochstein, Voorhees, Pratt, Rangarajan, Nagel & Mehrotra',
     year: 2023,
     title:
-      'Customer success management: A formative measure and nomological validation',
-    venue: 'International Journal of Research in Marketing',
-    canonicalUrl: 'https://doi.org/10.1016/j.ijresmar.2023.07.001',
+      'Customer success management, customer health, and retention in B2B industries',
+    venue: 'International Journal of Research in Marketing 40(4), 912–932',
+    canonicalUrl: 'https://doi.org/10.1016/j.ijresmar.2023.09.002',
     pdfUrl: null,
   },
   {
@@ -47,7 +47,7 @@ export const sources: Source[] = [
     year: 2018,
     title:
       'Retention Futility: Targeting High-Risk Customers Might Be Ineffective',
-    venue: 'Journal of Marketing Research 55(1)',
+    venue: 'Journal of Marketing Research 55(1), 80–98',
     canonicalUrl: 'https://doi.org/10.1509/jmr.16.0163',
     // Published version is paywalled — free preprint is linked in-page, not hosted.
     pdfUrl: null,
@@ -59,10 +59,10 @@ export const sources: Source[] = [
     year: 2018,
     title:
       'In Pursuit of Enhanced Customer Retention Management: Review, Key Issues, and Future Directions',
-    venue: 'Customer Needs and Solutions 5',
+    venue: 'Customer Needs and Solutions 5, 65–81',
     canonicalUrl:
       'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2903548',
-    pdfUrl: '/papers/ascarza-2018-enhanced-retention-mgmt-ssrn.pdf',
+    pdfUrl: null,
   },
   {
     id: 'kth-saas-retention',
@@ -81,7 +81,7 @@ export const sources: Source[] = [
     year: 2013,
     title:
       'Towards a framework of customer value assessment in B2B markets: An exploratory study',
-    venue: 'Industrial Marketing Management 42(8)',
+    venue: 'Industrial Marketing Management 42(8), 1307–1317',
     canonicalUrl:
       'https://www.sciencedirect.com/science/article/abs/pii/S0019850113001284',
     pdfUrl: null,
@@ -93,7 +93,7 @@ export const sources: Source[] = [
     title: 'The Bow-Tie: A Model for Recurring Revenue',
     venue: 'Winning by Design (blueprint)',
     canonicalUrl: 'https://winningbydesign.com/',
-    pdfUrl: '/papers/winningbydesign-bowtie.pdf',
+    pdfUrl: null,
   },
   {
     id: 'wbd-spiced',
@@ -103,11 +103,11 @@ export const sources: Source[] = [
     venue: 'Winning by Design (blueprint)',
     canonicalUrl:
       'https://winningbydesign.com/resources/blueprints/the-spiced-framework/',
-    pdfUrl: '/papers/winningbydesign-spiced.pdf',
+    pdfUrl: null,
   },
   {
     id: 'meddpicc',
-    authors: 'MEDDICC (Dick Dunkel & Jack Napoli)',
+    authors: 'MEDDICC',
     year: 2021,
     title: 'MEDDPICC — Sales Qualification Methodology',
     venue: 'MEDDICC (practitioner)',
@@ -119,8 +119,8 @@ export const sources: Source[] = [
     authors: 'Mamun',
     year: 2025,
     title:
-      'Machine Learning Approaches for Customer Retention: A Systematic Review',
-    venue: 'Peer-reviewed review',
+      'Advancements in machine learning for customer retention: A systematic literature review of predictive models and churn analysis',
+    venue: 'Journal of Sustainable Development and Policy 1(1), 250–284',
     canonicalUrl: 'https://doi.org/10.63125/9b316w70',
     pdfUrl: null,
   },
@@ -131,6 +131,6 @@ export const sources: Source[] = [
     title: '2025 SaaS Performance Metrics Benchmarks',
     venue: 'Benchmarkit (industry report)',
     canonicalUrl: 'https://www.benchmarkit.ai/2025benchmarks',
-    pdfUrl: '/papers/benchmarkit-2025-saas-metrics.pdf',
+    pdfUrl: null,
   },
 ]
