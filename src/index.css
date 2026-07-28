@@ -40,6 +40,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Hide scrollbar on the horizontally scrollable top nav */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Uppercase, letter-spaced mini-label — the site's signature convention */
 .mini-label {
   font-size: 0.6875rem;

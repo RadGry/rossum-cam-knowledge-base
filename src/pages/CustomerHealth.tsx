@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import { MiniLabel } from '../components/ui'
+import { FocusHeader, SectionHead, SourcesForArea } from '../components/FocusArea'
 import Cite from '../components/Cite'
 
 /* The three health dimensions, mapped to Rossum signals. */
@@ -49,31 +48,20 @@ const RUN_SHEET = [
   },
 ]
 
-function SectionHead({ label, title }: { label: string; title: string }) {
-  return (
-    <div className="mb-5">
-      <MiniLabel>{label}</MiniLabel>
-      <h2 className="mt-2 text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-        {title}
-      </h2>
-    </div>
-  )
-}
-
 export default function CustomerHealth() {
   return (
     <article>
-      <header className="max-w-2xl">
-        <MiniLabel>Focus area</MiniLabel>
-        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
-          Customer Health
-        </h1>
-        <p className="mt-4 text-[0.95rem] leading-relaxed text-muted">
-          Measure health, not happiness. Happiness tells you how the last
-          conversation went. Health tells you whether the account will still be
-          here &mdash; and paying more &mdash; next year.
-        </p>
-      </header>
+      <FocusHeader
+        stage="adopt"
+        title="Customer Health"
+        lede={
+          <>
+            Measure health, not happiness. Happiness tells you how the last
+            conversation went. Health tells you whether the account will still be
+            here &mdash; and paying more &mdash; next year.
+          </>
+        }
+      />
 
       {/* THE THEORY */}
       <div className="mt-14">
@@ -105,10 +93,7 @@ export default function CustomerHealth() {
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {DEAR.map((d) => (
-            <div
-              key={d.k}
-              className="rounded-md border border-hairline bg-card p-4"
-            >
+            <div key={d.k} className="rounded-md border border-hairline bg-card p-4">
               <div className="flex items-baseline gap-2">
                 <span className="text-lg font-semibold text-accent">{d.k}</span>
                 <span className="text-sm font-semibold text-ink">{d.name}</span>
@@ -123,7 +108,6 @@ export default function CustomerHealth() {
       <div className="mt-16">
         <SectionHead label="Do this" title="Score every account, roll into one number" />
 
-        {/* Dimension → signal mapping */}
         <div className="overflow-x-auto rounded-md border border-hairline">
           <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
             <thead>
@@ -145,7 +129,6 @@ export default function CustomerHealth() {
           </table>
         </div>
 
-        {/* Run-sheet */}
         <ol className="mt-6 space-y-4">
           {RUN_SHEET.map((step, i) => (
             <li key={step.title} className="flex gap-4">
@@ -168,33 +151,7 @@ export default function CustomerHealth() {
         </p>
       </div>
 
-      {/* SOURCES FOR THIS AREA */}
-      <div className="mt-16">
-        <SectionHead label="Sources for this area" title="" />
-        <ul className="space-y-3">
-          <li className="text-sm">
-            <span className="text-ink">
-              Hochstein et al. (2023). Customer success management: A formative
-              measure and nomological validation.
-            </span>{' '}
-            <span className="text-muted">
-              International Journal of Research in Marketing.
-            </span>
-          </li>
-          <li className="text-sm">
-            <span className="text-ink">
-              Gainsight. The DEAR Framework for Customer Health Scoring.
-            </span>{' '}
-            <span className="text-muted">Practitioner eBook.</span>
-          </li>
-        </ul>
-        <Link
-          to="/sources"
-          className="mt-4 inline-block text-sm font-medium text-accent hover:underline"
-        >
-          Full reference &amp; links on the Sources page &rarr;
-        </Link>
-      </div>
+      <SourcesForArea ids={['hochstein-2023', 'gainsight-dear']} />
     </article>
   )
 }
